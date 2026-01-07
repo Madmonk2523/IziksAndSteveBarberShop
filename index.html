@@ -273,38 +273,90 @@
             background: #f9f9f9;
         }
 
+        .services-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .service-card {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #2a2a2a 100%);
-            color: var(--text-light);
+            background: white;
+            color: var(--text-dark);
             padding: 2.5rem 2rem;
-            border-radius: 12px;
+            border-radius: 15px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            border-top: 4px solid var(--secondary-color);
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            border-top: 5px solid var(--secondary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-12px);
+            box-shadow: 0 15px 30px rgba(196, 30, 58, 0.2);
+        }
+
+        .service-card:hover:before {
+            transform: scaleX(1);
         }
 
         .service-card h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.6rem;
+            font-weight: 700;
         }
 
         .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-description {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .service-details {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         /* Contact Section */
@@ -470,6 +522,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-icon {
+                font-size: 3rem;
+            }
+
             .phone-display {
                 font-size: 1rem;
             }
@@ -540,37 +600,46 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2>Our Premium Services</h2>
+            <div class="services-intro">
+                <p>We offer a full range of professional barbering services. Whether you're looking for a classic cut, a sharp fade, or a complete grooming experience, our master barbers have the expertise and skill to exceed your expectations.</p>
+            </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">✂️</div>
                     <h3>Classic Haircuts</h3>
-                    <p>Timeless cuts crafted by master barbers with years of experience</p>
+                    <p class="service-description">Timeless cuts crafted by master barbers with decades of experience. We customize every style to complement your face shape and personal preference.</p>
+                    <div class="service-details">💈 20-30 minutes</div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎯</div>
                     <h3>Fade & Designs</h3>
-                    <p>Sharp fades and custom designs tailored to your style</p>
+                    <p class="service-description">Sharp, crisp fades and custom designs that showcase precision barb work. From tight to textured fades, we create clean lines and smooth transitions.</p>
+                    <div class="service-details">✨ Premium service</div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🧔</div>
                     <h3>Beard Grooming</h3>
-                    <p>Complete beard trimming and shaping services</p>
+                    <p class="service-description">Complete beard care including trimming, shaping, and conditioning. Keep your facial hair looking sharp and well-maintained between cuts.</p>
+                    <div class="service-details">🪮 10-15 minutes</div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💇</div>
                     <h3>Hair Treatments</h3>
-                    <p>Premium treatments to keep your hair healthy</p>
+                    <p class="service-description">Premium treatments and conditioning services to keep your hair healthy, strong, and vibrant. Perfect for all hair types.</p>
+                    <div class="service-details">💪 Recommended</div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🪮</div>
                     <h3>Traditional Shaves</h3>
-                    <p>Classic straight razor shaves for the ultimate grooming experience</p>
+                    <p class="service-description">Experience the luxury of a classic straight razor shave. A relaxing, pampering service that leaves your skin smooth and refreshed.</p>
+                    <div class="service-details">🌟 Luxury experience</div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">👨‍💼</div>
-                    <h3>Kids Cuts</h3>
-                    <p>Friendly service for young customers</p>
+                    <h3>Kids Haircuts</h3>
+                    <p class="service-description">Friendly, patient service for young customers. We make haircuts fun and comfortable for kids while delivering quality cuts parents love.</p>
+                    <div class="service-details">😊 Family service</div>
                 </div>
             </div>
         </div>
